@@ -10,10 +10,13 @@ public class Main {
 		}
 		catch(Exception ex) {}
 
+		StringBuilder sb = new StringBuilder();
 		while(sc.hasNext()) {
 			String num = sc.nextLine();
-			System.out.println(obj.isPrime(Integer.parseInt(num)));
+			sb.append(obj.isPrime(Integer.parseInt(num)));
+			sb.append("\n");
 		}
+		System.out.println(sb.toString());
 	}
 
 	private int isPrime(int num) {
