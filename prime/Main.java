@@ -23,7 +23,8 @@ public class Main {
 
 	private int isPrime(int num) {
         if (num <= 3) return 1;
-        for (int i = 2; i <= Math.ceil(Math.sqrt(num)); i++) {
+		int max = Math.ceil(Math.sqrt(num));
+        for (int i = 2; i <= max; i++) {
             if (num % i == 0) {
                 return 0;
             }
