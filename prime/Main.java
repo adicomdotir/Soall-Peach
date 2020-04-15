@@ -3,17 +3,20 @@ import java.io.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Scanner sc = null;
 		try {
-			sc = new Scanner(new File(args[0]));
+			String line = null;
+			FileReader in = new FileReader(new File(args[0]));
+			BufferedReader br = new BufferedReader(in);
+
 			OutputStream out = new BufferedOutputStream ( System.out );
-			while(sc.hasNext()) {
-				String num = sc.nextLine();
-				out.write((isPrime(Integer.parseInt(num)) + "\n").getBytes());
+
+			while ((line = br.readLine()) != null) {
+				out.write((isPrime(Integer.parseInt(line)) + "\n").getBytes());
 			}
 			out.flush();
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
-		catch(Exception ex) {}
 	}
 
 	private static int isPrime(int num) {
